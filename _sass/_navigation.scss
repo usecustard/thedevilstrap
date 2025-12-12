@@ -1,0 +1,205 @@
+/* Menu style */
+
+body.menu-opened {
+    overflow: hidden;
+    }
+
+.primary-navigation {
+    overflow-y: auto;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba($black,0.9);
+    background-image:url('../images/static-bright.gif');
+
+    nav {
+        -webkit-perspective: 1200px;
+        perspective: 1200px;
+        position: relative;
+        margin: $spacing-unit $spacing-unit;
+        height: calc(100vh - ( #{$spacing-unit}) * 2 );
+        width: calc(100% - ( #{$spacing-unit}) * 2 );
+
+        @include max-width($on-palm) {
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            }
+
+        p {
+            margin: 0;
+            }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            position: relative;
+
+            li {
+                display: block;
+
+                }
+            }
+
+        a {
+            font-weight: 300;
+            display: block;
+            color: $nav-color;
+            -webkit-transition: color 0.2s;
+            transition: color 0.2s;
+            padding: $spacing-unit/2;
+            outline: 0;
+            text-transform: uppercase;
+
+            &:hover,
+            &:focus {
+                color: $nav-hover;
+                text-decoration: none;
+                }
+
+            }
+        }
+    }
+
+
+
+/* Unique styles */
+ .close-button a {
+    padding-top: 0!important;
+    padding-left: 0!important;
+    @include max-width($on-palm) {
+        padding-top: $spacing-unit/2!important;
+        padding-left: $spacing-unit/2!important;
+        }
+    }
+
+.trailer-link,
+.main-nav,
+.social-icons,
+.contact-link {
+    a {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+
+        @include max-width($large) {
+            font-size: 2rem;
+            line-height: 2rem;
+            }
+
+        @include max-width($on-laptop) {
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+            }
+
+        }
+    }
+
+
+.social-icons {
+    border: 1px solid #000000;
+    overflow: auto;
+
+    li {
+        float: left;
+        display: inline-block;
+        }
+
+    @include max-width($on-palm) {
+        a {
+            padding: 0!important;
+            margin-left: 15px !important;
+            margin-bottom: 15px !important;
+            i {
+                font-size: 3.375rem;
+                }
+            }
+        }
+
+    }
+
+
+
+.contact-link {
+    text-align: center;
+    @include max-width($on-palm) {
+        margin-right: 15px !important;
+        margin-bottom: 15px !important;
+        }
+
+    a {
+        display: inline-block;
+        border: 2px solid $nav-color;
+        text-transform: uppercase;
+        }
+
+    }
+
+
+
+/* FLEX Stuff */
+.flex-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+
+    > p,
+    > ul {
+        flex: 1 auto;
+
+        &.main-nav {
+            @include max-width($on-palm) {
+                flex: 1 100%;
+                padding-bottom: $spacing-unit/2;
+                }
+            }
+
+        }
+
+        @media screen and (min-height: 400px) {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+    }
+
+
+
+/* Effects */
+.navigation-overlay {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+    }
+
+.navigation-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    z-index: 10;
+    }
+
+.navigation-overlay nav ul {
+    opacity: 0.4;
+    -webkit-transform: translateY(-25%) rotateX(35deg);
+    transform: translateY(-25%) rotateX(35deg);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    }
+
+.navigation-overlay.open nav ul {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    }
+
+.navigation-overlay.close nav ul {
+    -webkit-transform: translateY(25%) rotateX(-35deg);
+    transform: translateY(25%) rotateX(-35deg);
+    }

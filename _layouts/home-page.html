@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="no-js">
+
+    {% include head.html %}
+
+    <body {% if page.featured %}style="background-image:url('{{ site.baseurl }}/assets/images/{{ page.featured }}')"{% endif %}>
+
+        {% include header.html %}
+
+        <main aria-label="Content">
+
+            <div class="wrapper home-video-wrapper">
+            {% assign numVideos = 0 %}
+            {% for video in site.static_files %}
+                {% if video.path contains 'assets/video/mp4' %}
+
+                    {% assign numVideos = numVideos | plus: 1 %}
+
+                    <video playsinline muted preload="auto" poster="{{ site.baseurl }}/assets/images/black.jpg" id="video{{ numVideos }}" class="vid {% if numVideos == 1 %}vid-current{% endif %}">
+                        <source src="{{ site.baseurl }}/assets/video/mp4/{{ video.basename }}.mp4" type="video/mp4">
+                        <source src="{{ site.baseurl }}/assets/video/webm/{{ video.basename }}.webm" type="video/webm">
+                    </video>
+
+                {% endif %}
+            {% endfor %}
+            <div class="logo-holder"><img src="{{ site.baseurl }}/assets/images/logo.svg" /></div>
+            </div>
+
+        </main>
+
+        {% include footer.html %}
+
+    </body>
+
+</html>

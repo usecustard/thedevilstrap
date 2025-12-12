@@ -1,0 +1,260 @@
+body {
+    min-height: 100vh;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    }
+
+
+
+.dropcaps {
+    float: left;
+    font-size: $base-line-height*1.5;
+    line-height: $base-line-height*1.5;
+    text-transform: uppercase;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    }
+
+
+.site-header {
+    position: relative;
+    background-color: $background-color;
+    box-sizing: border-box;
+    font-family: $nav-font-family;
+
+    a {
+        border: none;
+        text-decoration: none;
+        color: $nav-color;
+
+        &:link,
+        &:visited,
+        &:active {
+            color: $nav-color;
+            }
+
+        &:hover {
+            color: $nav-hover;
+            }
+
+        &.menu-button {
+            line-height: $spacing-unit/2;
+            padding: $spacing-unit/2 $spacing-unit;
+            display: inline-block;
+            outline: 0;
+
+            @include max-width($on-laptop) {
+                padding: $spacing-unit/2;
+                }
+
+            }
+
+        &.sound-trigger {
+            @extend .menu-button;
+            float:right;
+            }
+
+        }
+
+    }
+
+
+.site-footer {
+    padding: $spacing-unit/2 $spacing-unit;
+    line-height: $spacing-unit/2;
+    background-color: $background-color;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    @include max-width($on-laptop) {
+        padding: $spacing-unit/2;
+        }
+
+    a {
+        color: $nav-color;
+        outline: 0;
+
+        &:link,
+        &:visited,
+        &:active {
+            color: $nav-color;
+            }
+
+        &:hover {
+            color: $nav-hover;
+            }
+
+        }
+
+    p {
+        margin: 0
+        }
+        
+    }
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+    box-sizing: border-box;
+    min-height: calc( 100vh - (#{$spacing-unit} * 3) );
+
+    &.trailer {
+        min-height: initial;
+        padding: 0;
+        display: flex-start;
+        justify-content: center;
+        align-items: center;
+
+        .wrapper {
+            width: 100%;
+            max-width: none;
+            }
+        }
+    }
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+        }
+
+    }
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+    }
+
+.post-link {
+    display: block;
+    font-size: 24px;
+    }
+
+
+
+/**
+ * Posts
+ */
+
+.post-header {
+    margin-top: $spacing-unit*4;
+    margin-bottom: $spacing-unit*4;
+    text-align: center;
+
+    widows: 3;
+    orphans: 3;
+
+    @include max-width($large) {
+        margin-top: $spacing-unit*3;
+        margin-bottom: $spacing-unit*4;
+        }
+
+    @include max-width($on-laptop) {
+        margin-top: $spacing-unit*2;
+        margin-bottom: $spacing-unit*3;
+        }
+
+    @include max-width($on-palm) {
+        margin-top: $spacing-unit;
+        margin-bottom: $spacing-unit*2;
+        }
+
+    }
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include max-width($on-laptop) {
+        font-size: 36px;
+        }
+    }
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include max-width($on-laptop) {
+            font-size: 28px;
+            }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include max-width($on-laptop) {
+            font-size: 22px;
+            }
+        }
+
+    h4 {
+        font-size: 20px;
+
+        @include max-width($on-laptop) {
+            font-size: 18px;
+            }
+
+        }
+
+    }
+
+.post-content.columns {
+
+    @include min-width($on-laptop) {
+        -webkit-columns: 2;
+           -moz-columns: 2;
+                columns: 2;
+        -webkit-column-gap: $spacing-unit/2;
+           -moz-column-gap: $spacing-unit/2;
+                column-gap: $spacing-unit/2;
+
+        p, ul {
+
+            &:first-child{
+                margin-top: 0;
+                }
+
+            &:last-child {
+                margin-bottom: 0;
+                }
+
+            }
+
+        }
+
+    }
+
+
+.page-content a {
+    color: $link-color;
+    text-decoration: none;
+    border-bottom: 4px solid $brand-color;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to top, $brand-color 50%, $black 50%);
+    -webkit-transition: background-position 0.5s;
+    -moz-transition: background-position 0.5s;
+    transition: background-position 0.5s;
+
+
+    &:visited {
+        color: $link-color;
+        }
+
+    &:hover {
+        background-position: 0 100%;
+        color: $link-color;
+        }
+
+    }

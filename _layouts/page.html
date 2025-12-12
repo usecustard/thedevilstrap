@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">
+        {% assign titleWords = page.title | split:&nbsp; %}
+        {% for word in titleWords %}{% if forloop.last %}&nbsp;{% else %} {% endif %}{{ word }}{% endfor %}
+    </h1>
+  </header>
+
+  <div class="post-content {% if page.columns %}columns{% endif %}">
+    {{ content }}
+  </div>
+
+</article>

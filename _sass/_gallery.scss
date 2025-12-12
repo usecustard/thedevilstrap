@@ -1,0 +1,39 @@
+/* FLEX Stuff */
+.gallery-wrapper {
+    flex-wrap: wrap;
+    display: flex;
+    margin: -#{$spacing-unit/2} 0 $spacing-unit -#{$spacing-unit};
+    text-align: center;
+    -webkit-column-span: all;
+            column-span: all;
+
+    a {
+        border: none;
+        }
+
+    .gallery-item {
+        padding: $spacing-unit 0 0 $spacing-unit;
+        flex: 1 19%;
+
+        @media screen and (max-width: $large) {
+            flex: 1 24%;
+            }
+        @media screen and (max-width: $on-laptop) {
+            flex: 1 32%;
+            }
+            
+        img {
+            transition: opacity 0.3s, border 0.2s;
+            border: 0px solid white;
+            opacity: 1;
+
+            &:hover {
+                border: 10px solid $nav-hover;
+                opacity: 0.9;
+                }
+
+            }
+
+        }
+
+    }

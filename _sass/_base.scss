@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
+@font-face {
+    font-family: 'VCR_ODS_MONO';
+    src: url('../fonts/VCR_ODS_MONO.eot');
+    src: local('☺'),
+        url('../fonts/VCR_ODS_MONO.woff') format('woff'),
+        url('../fonts/VCR_ODS_MONO.ttf') format('truetype'),
+        url('../fonts/VCR_ODS_MONO.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@font-face {
+    font-family: 'OCRAStd';
+    src: url('../fonts/OCRAStd.eot');
+    src: local('☺'),
+         url('../fonts/OCRAStd.woff') format('woff'),
+         url('../fonts/OCRAStd.ttf') format('truetype'),
+         url('../fonts/OCRAStd.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$base-font-family: 'Overpass Mono', Consolas, monaco, monospace;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5rem;
+
+$header-font-family: "OCRAStd", 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+$header-font-weight: $base-font-weight;
+
+$spacing-unit:     30px;
+
+$black:             #000;
+$white:             #e2e2e2;
+$brand-color:       #4d84e8;
+
+$background-color:  $black;
+$text-color:        #fdfdfd;
+
+$link-color:        $white;
+$link-hover:        $brand-color;
+
+$nav-font-family:   "VCR_ODS_MONO", 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+$nav-color:         $white;
+$nav-hover:         #e3fcb1;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+
+
+
+// Width of the content area
+$content-width:    1000px;
+
+// Breakpoints
+$on-palm:          600px;
+$on-laptop:        800px;
+$large:            1000px;
+
+
+@mixin max-width($device) {
+
+    @media screen and (max-width: $device) {
+        @content;
+        }
+
+    }
+
+@mixin min-width($device) {
+
+    @media screen and (min-width: $device - 1) {
+        @content;
+        }
+
+    }
+
+
+/**
+ * Basic styling
+ */
+body {
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+       -moz-font-feature-settings: "kern" 1;
+         -o-font-feature-settings: "kern" 1;
+            font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    }
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+    }
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    }
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+    }
+
+figcaption {
+    font-size: $small-font-size;
+    }
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $spacing-unit;
+
+    @include max-width($on-laptop) {
+        margin-left: 0;
+        }
+
+    }
+
+
+li {
+    > ul,
+    > ol {
+        margin-bottom: 0;
+        }
+    }
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $header-font-weight;
+    font-family: $header-font-family;
+    }
+
+
+
+/**
+ * Links
+ */
+a {
+    color: $link-color;
+
+    &:visited {
+        color: $link-color;
+        }
+
+    &:hover {
+        color: $brand-color;
+        }
+
+    }
+
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    color: $grey-color;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+        }
+
+    }
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #eef;
+    }
+
+code {
+    padding: 1px 5px;
+    }
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+        }
+    }
+
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include max-width($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+        }
+
+    }
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+
+
+/**
+ * Icons
+ */
+.icon > svg {
+    display: inline-block;
+    vertical-align: middle;
+
+    path {
+        fill: $grey-color;
+        }
+
+    }
+
+
+
+/**
+ * Video Container
+ */
+.embed-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-height: calc( 100vh - (#{$spacing-unit} * 3) );
+        }
+
+    }

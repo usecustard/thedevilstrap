@@ -1,0 +1,61 @@
+<header class="site-header" role="banner">
+
+    <a id="trigger-overlay" class="menu-button" href="javascript:;">[Menu]</a>
+
+    {% if page.id == 'home' %}
+        <a class="sound-trigger">
+            <i class="fa fa-volume-up" aria-hidden="true"></i>
+        </a>
+    {% endif %}
+
+    <!-- open/close -->
+    <div class="primary-navigation navigation-overlay">
+        <nav id="mainNavigation">
+
+            <p class="close-button"><a class="close-menu">[Close]</a></p>
+            <p class="trailer-link"><a href="{{ site.baseurl }}/trailer/">Trailer ►</a></p>
+
+            <div class="flex-wrapper">
+
+                <ul class="main-nav">
+                    <li>
+                        <a href="{{ site.baseurl }}/">
+                            <svg style="width: 10px; height:15px;">
+                                <polygon points="0,0  10,0  10,15 0,15" style="fill:#fff;"></polygon>
+                            </svg>
+                            Home
+                        </a>
+                    </li>
+                {% for my_page in site.pages %}
+
+                    {% if my_page.title and my_page.nav == 'main' %}
+                        <li>
+                            <a href="{{ my_page.url | relative_url }}">
+                                <svg style="width: 10px; height:15px;">
+                                    <polygon points="0,0  10,0  10,15 0,15" style="fill:#fff;"></polygon>
+                                </svg>
+                                {% if my_page.nav-title %}
+                                    {{ my_page.nav-title | escape }}
+                                {% else %}
+                                    {{ my_page.title | escape }}
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
+
+                {% endfor %}
+                </ul>
+
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/TheDevilsTrap/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                </ul>
+
+                <p class="contact-link"><a href="{{ site.baseurl }}/contact/">press</a></p>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>

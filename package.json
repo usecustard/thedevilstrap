@@ -1,0 +1,17 @@
+{
+  "name": "thedevilstrap",
+  "version": "1.0.0",
+  "description": "The Devil Strap - Jekyll static site",
+  "private": true,
+  "scripts": {
+    "dev": "bundle exec jekyll serve",
+    "dev:netlify": "netlify dev",
+    "build": "bundle exec jekyll build",
+    "build:netlify": "netlify build",
+    "deploy": "netlify deploy --prod",
+    "deploy:preview": "netlify deploy"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

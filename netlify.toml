@@ -2,6 +2,9 @@
   command = "bundle exec jekyll build"
   publish = "_site"
 
+[build.environment]
+  RUBY_VERSION = "3.3.0"
+
 # Development settings for local testing with Netlify CLI
 [dev]
   command = "bundle exec jekyll serve --watch --incremental"

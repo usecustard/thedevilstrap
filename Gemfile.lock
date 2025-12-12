@@ -47,6 +47,7 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
+    rexml (3.4.4)
     rouge (1.11.1)
     safe_yaml (1.0.5)
     sass (3.7.4)
@@ -72,6 +73,7 @@ DEPENDENCIES
   jekyll (= 3.4.2)
   jekyll-feed (~> 0.6)
   minima (~> 2.0)
+  rexml
   tzinfo-data
 
 CHECKSUMS
@@ -102,6 +104,7 @@ CHECKSUMS
   public_suffix (7.0.0) sha256=f7090b5beb0e56f9f10d79eed4d5fbe551b3b425da65877e075dad47a6a1b095
   rb-fsevent (0.11.2) sha256=43900b972e7301d6570f64b850a5aa67833ee7d87b458ee92805d56b7318aefe
   rb-inotify (0.11.1) sha256=a0a700441239b0ff18eb65e3866236cd78613d6b9f78fea1f9ac47a85e47be6e
+  rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142
   rouge (1.11.1) sha256=888974619e7c34d89baa34135bfa5fd7f9852ff2483c151229ccdad9d664558d
   safe_yaml (1.0.5) sha256=a6ac2d64b7eb027bdeeca1851fe7e7af0d668e133e8a88066a0c6f7087d9f848
   sass (3.7.4) sha256=808b0d39053aa69068df939e24671fe84fd5a9d3314486e1a1457d0934a4255d
